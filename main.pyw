@@ -53,7 +53,8 @@ class Main(QtWidgets.QMainWindow):
         text = text.split()
         self.ui.textEdit_site_book_link.clear()
         if len(text) > 0:
-            message = f'Кількість книжок яка буде добавлена в БД: [{len(text)}]\nЯкщо посилання введено коректно'
+            message = f'Кількість книжок яка буде добавлена в БД: [{len(text)}]\n' \
+                      f'Якщо посилання введено коректно'
             warning(message=message, info=True)
             parse_site.settings.SPIDER_URLS = text
             get_book_site(text)
@@ -135,12 +136,10 @@ class Main(QtWidgets.QMainWindow):
 
     def list_widget_dir_item_clicked(self):
         id_folder = self.ui.listWidget_dir.currentItem().data(1)[0]
-
         db = LocalDB()
         dir_book = db.get_book(id_folder)
         authors = db.get_authors()
         db.close()
-
         self.clear_layout(self.ui.verticalLayout_dir)
         for book in dir_book:
             if book[2] is None:
@@ -149,7 +148,6 @@ class Main(QtWidgets.QMainWindow):
                 )
             else:
                 title = book[2]
-
             if book[1] is None:
                 current_id_author = None
             else:

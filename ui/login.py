@@ -141,7 +141,7 @@ class Ui_DialogLogin(object):
         DialogLogin.setWindowTitle(_translate("DialogLogin", "Вхід"))
         self.label_login.setText(_translate("DialogLogin", "Логін:"))
         self.label_password.setText(_translate("DialogLogin", "Пароль:"))
-        self.lineEdit_login.setPlaceholderText(_translate("DialogLogin", "lebid"))
+        self.lineEdit_login.setPlaceholderText(_translate("DialogLogin", "Login"))
         self.lineEdit_password.setPlaceholderText(_translate("DialogLogin", "Pas$vv0rD"))
         self.checkBox_view_password.setText(_translate("DialogLogin", "Показати пароль"))
         self.checkBox_save_password.setText(_translate("DialogLogin", "Запам\'ятати пароль"))
